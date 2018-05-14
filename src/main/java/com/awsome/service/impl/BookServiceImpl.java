@@ -12,13 +12,40 @@ import java.util.List;
 public class BookServiceImpl implements BookService {
     @Autowired
     BookRepository bookRepository;
+
+
+
     @Override
     public List<Book> findAll() {
         return bookRepository.findAll();
     }
 
+
+
     @Override
     public Book insertBook(Book book) {
+        return bookRepository.save(book);
+    }
+
+
+
+    @Override
+    public Book findById(Long id) {
+        return bookRepository.findById(id).get();
+    }
+
+
+
+    @Override
+    public Boolean deleteBook(Long id) {
+        bookRepository.deleteById(id);
+        return true;
+    }
+
+
+
+    @Override
+    public Book updateBook(Book book) {
         return bookRepository.save(book);
     }
 }

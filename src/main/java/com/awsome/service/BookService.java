@@ -5,9 +5,13 @@ import com.awsome.domain.Book;
 import java.util.List;
 
 public interface BookService {
-	List<Book> findAll();
+    List<Book> findAll();
 
+    Book insertBook(Book book);
 
+    Book findById(Long id);
 
-	Book insertBook(Book book);
+    Boolean deleteBook(Long id);
+
+    Book updateBook(Book book);
 }
